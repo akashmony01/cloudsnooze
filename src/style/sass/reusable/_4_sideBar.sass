@@ -1,0 +1,116 @@
+// side bar styles start
+aside.sideBar
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    width: 200px
+    height: 100%
+    background-color: $lightBg
+    transition: .5s
+
+    &.slided
+        transform: translateX(-100%)
+
+    nav.sideBarContainer        
+        a.logoLink
+            display: block
+            position: sticky
+            top: 0
+            padding: 20px 10px
+            background-color: $lightBg
+            z-index: 1
+
+            img.logoImg
+                width: 100px
+                height: auto
+
+        ul.sideMenu
+            list-style-type: none
+            li.sideMenuItem
+                display: block
+                padding: 20px 10px
+                border-top: 1px solid $lightBorder
+                transition: .3s
+                
+                a.sideMenuLink
+                    font-size: 16px
+                    display: block
+                    position: relative
+                    text-transform: uppercase
+                    cursor: pointer
+                    color: $whiteText
+                    transition: .3s
+
+                    span.dropdownIcon
+                        position: absolute
+                        top: 50%
+                        right: 0px
+                        width: 16px
+                        transform: translateY(-60%)
+                        display: block
+                        font-size: 14px
+                        text-align: center
+
+                        i
+                            transition: .3s
+                    &:hover
+                        color: $lightWhiteText
+                        
+                    &.showed
+                        span.dropdownIcon
+                            i
+                                transform: rotate(180deg)
+
+
+                
+                ul.seconderyMenu
+                    list-style-type: none
+                    max-height: 0px
+                    overflow: hidden
+                    transition: .3s
+
+                    &.showed
+                        transition: .3s
+                        padding-top: 15px
+                        max-height: 2000px
+                    
+                    li.seconderyItem
+                        padding: 5px 0
+
+                        a.seconderyLink
+                            cursor: pointer
+                            color:  $lightHeadingText
+                            text-decoration: none
+                            font-size: 16px
+                            transition: .3s
+                            text-transform: capitalize
+                            line-height: 1.2
+                            position: relative
+                            padding-right: 20px
+                            
+                            // layout styles
+                            display: flex
+                            align-items: center
+
+                            &:hover
+                                color: $lightText
+
+                            span
+                                i
+                                    font-size: 20px
+                                    width: 20px
+                                    margin-right: 5px
+                                
+                                &.rightIcon
+                                    position: absolute
+                                    top: 50%
+                                    transform: translateY(-50%)
+                                    right: 0px
+                                    width: 16px
+                                    margin: 0
+
+                                    i
+                                        font-size: 14px
+                                        margin-right: 0
+

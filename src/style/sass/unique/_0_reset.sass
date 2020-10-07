@@ -1,0 +1,65 @@
+/* importing fonts */
+@font-face
+	font-family: Open Sans
+	src: url('fonts/openSans.ttf')
+
+@font-face
+	font-family: Roboto Condensed
+	src: url('fonts/roboto.ttf')
+
+/* reseting basic styles */
+html
+  scroll-behavior: smooth
+
+body
+	background-color: $whiteBg
+
+// all element styls
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	border: none
+	background: none
+	border-radius: 0
+	outline: none
+	text-decoration: none
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+		font-family: 'Roboto Condensed', sans-serif
+		line-height: 1.25
+		color: $darkText
+
+	p,
+	textarea,
+	input,
+	pre,
+	button,
+	figcaption,
+	a
+		font-family: 'Open Sans', sans-serif
+		line-height: 1.15
+		color: $lightText
+
+	button,
+	a
+		cursor: pointer
+		transition: .3s
+
+	button
+		display: block
+		padding: 10px 25px
+		text-transform: capitalize
+		background-color: $lightBg
+		border-radius: 10px
+		font-weight: 600
+		color: $whiteText
+		
+		&:hover
+			background-color: $hoverColor
+		
+		

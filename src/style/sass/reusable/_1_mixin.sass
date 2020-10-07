@@ -1,0 +1,73 @@
+// mixins for tab content item
+@mixin tabContentItemStyles
+    border: 1px solid $darkBorder
+    cursor: pointer
+
+    &:hover
+        .ciHead
+            background-color: $offWhite
+
+    &.active
+        border-color: $linkText
+        
+        .ciHead
+            background-color: $offWhite
+            border-color: $linkText
+
+    .ciHead,
+    .ciBody
+        border-bottom: 1px solid $darkBorder
+        padding: 15px 10px
+        text-align: center
+
+        p
+            margin: 0
+            font-size: 16px
+            line-height: 1.25
+            font-weight: 600
+
+            &.monthPrice
+                span
+                    font-size: 25px
+                    color: $blackText
+                    display: inline-block
+
+            &.hourPrice
+                span
+                    font-size: 12px
+                    margin-left: 2.5px
+
+        &.ciBody
+            border-bottom: none
+            
+            p
+                span
+                    opacity: .75
+                    font-size: 14px
+
+// drop down indicator mixin
+@mixin dropDownIndicatorStyle    
+    position: absolute
+    top: -15px
+    left: 50%
+    transform: translateX(-50%)
+    height: 15px
+    width: 15px
+    content: ''
+    background-color: transparent
+    border-left: 15px solid transparent
+    border-right: 15px solid transparent
+    border-bottom: 15px solid $whiteBg
+
+// fadin animation
+@mixin fadInAnimationStyles
+    animation-name: fadeInAnimation
+    animation-duration: .3s
+
+@keyframes fadeInAnimation
+    from
+        margin-top: 10px
+        opacity: 0
+    to 
+        margin-bottom: 0
+        opacity: 1

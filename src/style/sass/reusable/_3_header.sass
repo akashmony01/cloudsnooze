@@ -1,0 +1,235 @@
+// -----------------------------------------------
+// main navigation start
+.mainNav
+    padding: 10px 15px
+    padding-left: 95px
+    position: sticky
+    top: 0
+    background-color: $whiteBg
+    box-shadow: 1px 1px 2px 1px grey
+    z-index: 99
+    margin: 0 -25px
+    margin-bottom: 35px
+
+    // layout styles
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    a.sideMenuSlider
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        text-align: center
+        border-right: 2px solid $darkBorder
+        z-index: 10
+
+        i
+            font-size: 25px
+            line-height: 63px
+            width: 63px
+            transition: .3s
+
+            &:hover
+                color: $linkText
+
+        &.slided
+            i
+                transform: rotate(-90deg)
+
+    .mainNavLeft
+        margin: 0
+
+        // layout styles
+        display: flex
+        align-items: center
+
+        span
+            width: 20px
+            i
+                line-height: 42px
+
+        input
+            height: 40px
+            padding: 0 10px
+            max-width: 100%
+            min-width: 400px
+
+    ul.mainNavRight
+        list-style-type: none
+        margin: 0
+
+        // layout styles
+        display: flex
+        justify-content: end
+        align-items: center
+
+        li
+            display: inline-block
+            padding: 0 5px
+
+            a
+                font-size: 14px
+                text-transform: uppercase
+                color: $linkText
+
+                &.createBtn
+                    background-color: $linkText
+                    color: $whiteText
+                    padding: 5px 10px
+                    margin: 0 10px
+
+                    i
+                        font-size: 14px
+                        color: $whiteText
+
+                        &:hover
+                            color: $whiteText
+
+                i
+                    font-size: 25px
+                    transition: .3s
+                    color: $lightText
+
+                    &:hover
+                        color: $linkText
+                
+                &.slided
+                    i
+                        transform: rotate(180deg)
+
+            &.userInfo
+                // layout styles
+                display: flex
+
+                .userSpent
+                    margin: 0 5px
+                    p
+                        margin: 0
+                        text-transform: uppercase
+                        font-size: 13px
+                        line-height: 1.25
+                        font-weight: 600
+                        text-align: center
+
+                        &:first-child
+                            font-size: 15px
+                            color: $darkText
+
+                .userprofile
+                    padding-left: 15px
+                    margin-left: 15px
+                    border-left: 2px solid $darkBorder
+
+                    // layout styles
+                    a
+                        display: flex
+                        align-items: center
+                        span
+                            margin: 0 7px
+                            height: 35px
+                            width: 35px
+                            border-radius: 50%
+                            text-align: center
+                            line-height: 35px
+                            font-size: 25px
+                            font-weight: 700
+                            color: $whiteText
+                            text-transform: uppercase
+                            display: block
+                            background-color: $darkBorder
+                            position: relative
+                            
+                            img
+                                height: 20px
+                                width: 20px
+                                border-radius: 50%
+                                background-color: $lightBg
+                                border: 2px solid $whiteBg
+
+                                position: absolute
+                                bottom: -5px
+                                right: -5px
+
+                        i
+                            font-size: 20px
+                            color: $lightText
+
+// -----------------------------------------------
+// dropdown lsit styles
+.mainNav
+    .seconderyItem
+        position: relative
+
+        &.slided
+            &::before
+                position: absolute
+                top: 100%
+                left: 50%
+                transform: translateX(-50%)
+                width: 200px
+                height: 100px
+                z-index: -1
+                content: ''
+                background-color: transparent
+
+        ul.seconderyList
+            position: absolute
+            top: 100%
+            left: 50%
+            transform: translate(-50%)
+            background-color: $whiteBg
+            width: 200px
+            max-height: 100vh
+            overflow: hidden
+            border-radius: 5px
+            margin-top: 25px
+            box-shadow: 1px 1px 2px 1px $darkBorder
+            overflow: visible
+            z-index: 999
+            transition: .3s
+            display: none
+
+            &.slided
+                display: block
+                @include fadInAnimationStyles
+
+            &::before
+                @include dropDownIndicatorStyle
+                border-bottom: 15px solid $darkBorder
+        
+            &::after
+                @include dropDownIndicatorStyle
+                top: -14px
+
+            li
+                padding: 10px 15px
+                transition: .3s
+                display: block
+                border-bottom: 1px solid $offWhite
+
+                &:hover
+                    background-color: $offWhite
+
+                a
+                    font-size: 16px
+                    text-transform: capitalize
+                    display: block
+        
+        &.userprofile
+            &.slided
+                &::before
+                    left: auto
+                    right: 0
+                    transform: translateX(0%)
+
+            ul.seconderyList
+                left: auto
+                right: 0
+                transform: translate(0%)
+
+                &::before,
+                &::after
+                    left: auto
+                    right: 0

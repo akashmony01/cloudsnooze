@@ -1,0 +1,80 @@
+/* loader div / element */
+.loader
+	position: fixed
+	top: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+	z-index: 9999
+	display: flex
+	align-items: center
+	justify-content: center
+
+	/* loader background */
+	background-color: #fff
+
+	img
+		/* loader image dimension */
+		width: 100px
+		height: auto
+
+		animation: fadeOut
+		animation-fill-mode: forwards
+
+		/* animation durstion in second */
+		animation-duration: 1s
+
+.loader.hidden
+	animation: vanish
+	animation-fill-mode: forwards
+
+	/* animation durstion in second */
+	animation-duration: 1s
+
+/* the loader disappear animation */
+@keyframes vanish
+	80%
+		opacity: 1
+		visibility: hidden
+
+	100%
+		opacity: 0
+		visibility: hidden
+
+/* the loader animation */
+@keyframes fadeOut
+	100%
+		opacity: 0
+		visibility: hidden
+
+// main content styles
+// ===================
+main.mainContent
+	margin-left: 200px
+	padding: 25px
+	padding-top: 0
+	transition: .5s
+
+	&.slided
+		margin-left: 0
+
+	.contentHeader
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+
+		h2
+			margin: 0
+
+		a
+			text-decoration: none
+			font-size: 18px
+			color: $linkText
+			font-weight: 600
+
+			&:hover
+				color: $hoverColor
+
+			i
+				margin-left: 5px

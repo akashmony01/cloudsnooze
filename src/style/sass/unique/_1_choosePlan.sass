@@ -1,0 +1,237 @@
+// choose a plan styles
+// --------------------------------------------
+// tab header styles
+.cpTabHeader
+    margin-top: 35px
+
+    // layout styles
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    
+    .cpTabLeft,
+    .cpTabRight
+        border: 1px solid $darkBorder
+        text-align: center
+        
+        .tabName
+            padding: 0px 5px
+            text-transform: capitalize 
+            border-bottom: 1px solid $darkBorder
+            background-color: $offWhite
+            height: 40px
+
+            h4
+                font-size: 16px
+                line-height: 40px
+                text-transform: uppercase
+                margin: 0
+        
+        .tabHeaderItem
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+
+            button
+                background-color: $whiteBg
+                color: $darkText
+                border: 1px solid transparent
+                border-right-color: $darkBorder
+                border-radius: 0
+                padding: 15px
+                font-weight: 700
+                font-size: 18px
+                position: relative
+                
+                &:last-child
+                    border-color: transparent
+
+                &:focus
+                    border: 1px solid $linkText
+                    background-color: $offWhite
+                    outline: none
+
+                &.active
+                    color: $linkText
+                    border: 1px solid $linkText
+
+                    &::after
+                        position: absolute
+                        bottom: -65px
+                        left: calc( 50% - 12.5px )
+                        transform: rotate(45deg)
+                        height: 25px
+                        width: 25px
+                        background-color: $whiteBg
+                        border-left: 2px solid $darkBorder
+                        border-top: 2px solid $darkBorder
+                        content: ''
+                        z-index: 1
+                    
+
+        &.cpTabLeft
+            width: 200px
+            .tabHeaderItem
+                position: relative
+                height: calc( 100% - 40px )
+
+                button
+                    position: absolute
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    width: 100%
+
+        &.cpTabRight
+            width: calc( 100% - 215px )
+
+// tab content styles
+.cpTabContent
+    margin-top: 50px
+    padding: 35px 0
+    border-top: 2px solid $darkBorder
+
+    .cpTabItem
+        display: none
+
+        &.active
+            display: block
+        
+        .itemHeader
+            margin-bottom: 50px
+
+    .tabConetent
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-gap: 25px
+
+        .tabContentItem
+            @include tabContentItemStyles
+
+    .tabContentInfo
+        margin-top: 50px
+        
+        // layout styles
+        display: flex
+        align-items: start
+
+        i
+            color: $linkText
+            font-size: 25px
+            margin-right: 10px
+            margin-top: 2.5px
+
+        p
+            line-height: 1.25
+
+            a
+                color: $linkText
+
+// tab outer text styles
+.cpTabOuteText
+    p
+        a
+            color: $linkText
+
+// add block storage option
+.cpAddBlockStorage
+    margin-top: 50px
+    margin-bottom: 100px
+
+    .addStorageHeader
+        margin-bottom: 25px
+
+        h4
+            margin-bottom: 25px
+
+            span
+                cursor: pointer
+                font-size: 20px
+
+                i
+                    transition: .3s
+
+                    &:hover
+                        color: $linkText
+        
+        button
+            padding: 15px 25px
+            min-width: 250px
+            border: 1px solid $linkText
+            color: $linkText
+            background-color: $whiteBg
+
+            &:hover
+                background-color: $linkText
+                color: $whiteText
+
+    .addStorageContent
+        margin-top: 50px
+        display: none
+        
+        .storageItemContainer
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr 1fr
+            grid-gap: 25px
+
+            .tabContentItem
+                @include tabContentItemStyles
+        
+        .storageConfiguration
+            margin-top: 50px
+
+            h4
+                margin-bottom: 25px
+            
+            .storageConfigOption
+                // layout styles
+                display: grid
+                grid-template-columns: 1fr 1fr
+                grid-gap: 35px
+
+                .storageConfigItem
+                    padding: 25px
+                    border: 1px solid $darkBorder
+                    border-radius: 10px
+                    
+                    &.active
+                        border-color: $linkText
+
+                    // layout styles
+                    display: flex
+                    align-items: center
+
+                    input
+                        margin-right: 20px
+                        background-color: red
+                        width: 25px
+
+                    label
+                        width: calc( 100% - 25px )
+                        cursor: pointer
+                        p
+                            margin-bottom: 0
+                
+                .fileSystemOption
+                    display: none
+                    margin: 0
+
+                    input
+                        margin-left: 10px
+                        margin-right: 5px
+                        cursor: pointer
+
+                    label
+                        cursor: pointer
+
+            .removeVolume
+                margin-top: 35px
+                padding: 15px 25px
+                min-width: 250px
+                border: 1px solid $dangerColor
+                color: $dangerColor
+                background-color: $whiteBg
+
+                &:hover
+                    background-color: $dangerColor
+                    color: $whiteText
