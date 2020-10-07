@@ -332,6 +332,7 @@ main.mainContent .contentHeader a i {
   color: #fff;
   text-transform: uppercase;
   display: block;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.25);
   position: relative;
 }
