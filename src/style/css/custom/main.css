@@ -376,10 +376,10 @@ main.mainContent .contentHeader a i {
   background-color: #fff;
   width: 200px;
   max-height: 100vh;
-  overflow: hidden;
   border-radius: 5px;
   margin-top: 25px;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+  overflow: visible;
   z-index: 999;
   transition: .3s;
   display: none;
