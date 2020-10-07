@@ -472,8 +472,6 @@ aside.sideBar.slided {
 
 aside.sideBar nav.sideBarContainer a.logoLink {
   display: block;
-  position: sticky;
-  top: 0;
   padding: 20px 10px;
   background-color: #009EFF;
   z-index: 1;
