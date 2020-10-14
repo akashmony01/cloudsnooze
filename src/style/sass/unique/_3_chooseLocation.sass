@@ -1,0 +1,100 @@
+.clItemContainer
+    text-align: center
+    margin-top: 35px
+
+    // layout styles
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    grid-gap: 25px
+
+    .clItem
+        border: 1px solid $darkBorder
+        border-radius: 5px
+        cursor: pointer
+        overflow: hidden
+
+        &:hover
+            .clItemHeader
+                background-color: $offWhite
+
+        &.active
+            border-color: $linkText
+
+            .clItemHeader
+                background-color: $offWhite
+            
+            .clItemFooter
+                border-color: $linkText
+
+                li
+                    border-color: $linkText
+
+                    &.active
+                        background-color: $offWhite
+
+        .clItemHeader
+            padding: 15px
+            transition: .3s
+
+            img
+                width: 60px
+                height: auto
+            
+            p
+                margin-top: 5px
+                margin-bottom: 10px
+                font-size: 16px
+                line-height: 1.2
+        
+        .clItemFooter
+            list-style-type: none
+            border-top: 1px solid $darkBorder
+            margin: 0
+
+            // layout styles
+            display: flex
+            align-items: center
+
+            li
+                border-left: 1px solid $darkBorder
+                display: block
+                width: 100%
+                transition: .3s
+
+                &:hover
+                    background-color: $offWhite
+                
+                &:first-child
+                    border: none
+                
+                a
+                    display: block
+                    width: 100%
+                    padding: 15px 5px
+                    margin-bottom: 2.5px
+
+.clLocatioinInfo
+    margin-top: 50px
+    max-width: 600px
+
+    h4
+        margin-bottom: 15px
+
+    h6
+        margin-bottom: 15px
+
+        span
+            &:last-child
+                border: 2px solid $darkBorder
+                padding: 0 15px
+                border-radius: 5px
+                margin-left: 5px
+
+    p
+        font-size: 16px
+        line-height: 1.25
+
+        a
+            color: $linkText
+            transition: .3s
+
