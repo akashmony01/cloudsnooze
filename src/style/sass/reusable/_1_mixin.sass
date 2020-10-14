@@ -64,6 +64,7 @@
     animation-name: fadeInAnimation
     animation-duration: .3s
 
+// fade in animation
 @keyframes fadeInAnimation
     from
         margin-top: 10px
@@ -71,3 +72,48 @@
     to 
         margin-bottom: 0
         opacity: 1
+
+// application items styles
+@mixin applicationItemStyles
+    border-bottom: 2px solid $offWhite
+    padding: 15px
+    cursor: pointer
+    transition: .3s
+
+    &:hover
+        background-color: $offWhite
+
+    &.active
+        border-color: $linkText!important
+
+    &:last-child
+        border: none
+
+    // layout styles
+    display: flex
+    position: relative
+
+    .applicationDetails
+        position: absolute
+        top: 5px
+        right: 8px
+        font-size: 14px
+        color: $linkText
+        z-index: 1
+
+    img
+        margin-top: 2.5px
+        width: 30px
+        height: 30px
+
+    .applicatIonfo
+        max-width: calc( 100% - 40px )
+        margin-left: 10px
+
+        h4
+            margin-bottom: 2px
+            font-size: 20px
+            font-weight: 600
+
+        p
+            margin: 0

@@ -1,0 +1,305 @@
+// tab button styles
+.cosTabHeader
+    margin: 50px 0
+    list-style-type: none
+    border-bottom: 2px solid $darkBorder
+
+    .tabHeaderItem
+        margin: 0px 10px
+        padding-bottom: 10px
+        display: inline-block
+        border-bottom: 2px solid transparent
+        margin-bottom: -2px
+        transition: .3s
+
+        &:first-child
+            margin-left: 0
+
+        &:last-child
+            margin-right: 0
+
+        .cosTabBtn
+            font-size: 16px
+            line-height: 1.2
+            font-weight: 600
+            color: $lightText
+            transition: .3s
+
+        &:hover
+            border-color: $linkText
+
+            .cosTabBtn    
+                color: $linkText
+
+        &.active
+            border-color: $linkText
+
+            .cosTabBtn
+                color: $linkText
+
+// tab element styles
+.cosTabContent
+    .cosTabItem
+        margin-bottom: 25px
+        display: none
+
+        &.active
+            display: block
+            
+            &#distroTab,
+            &#containerDistroTab
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+                grid-gap: 25px
+
+                .distroItem
+                    border: 1px solid $darkBorder
+                    text-align: center
+                    cursor: pointer
+
+                    // active styles
+                    &.active
+                        border-color: $linkText
+                        color: $linkText
+
+                        .distroBody
+                            border-color: $linkText
+
+                        p
+                            color: $linkText
+
+                    .distroBody
+                        padding: 15px
+                        border-bottom: 1px solid $darkBorder
+
+                        img
+                            width: 50px
+                            height: auto
+                        
+                        p
+                            margin-bottom: 5px
+                            margin-top: 15px
+
+                    .distroFooter
+                        padding: 15px
+                        cursor: pointer
+                        position: relative
+                        
+                        p
+                            margin: 0
+                            font-weight: 600
+                            text-transform: capitalize
+
+                            span
+                                margin-left: 3px
+
+                                i
+                                    transition: .3s
+
+                            &.slided
+                                span i
+                                    transform: rotate(180deg)
+
+                        // rest of styles import from _3_header.sass dropdown styles
+                        &.slided
+                            &::before
+                                width: 100%
+
+                        // rest of styles import from _3_header.sass dropdown styles
+                        ul.seconderyList
+                            text-align: left
+                            width: 100%
+                            margin-top: 20px
+                            box-shadow: none
+                            border: 1px solid $darkBorder
+                            border-radius: 0
+
+                            &::before
+                                left: 85%
+                        
+                            &::after
+                                top: -13px
+                                left: 85%
+
+                            // rest of styles import from _3_header.sass dropdown styles
+                            li a
+                                color: $lightText
+                            
+                            li a:hover
+                                color: $linkText
+
+            &#marketPlaceTab,
+            &#snapshotsTab
+                .exploreMarketPLace
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+
+                    .searchMarketPLace
+                        width: calc( 100% - 325px )
+                        position: relative
+
+                        input
+                            padding: 7.5px 10px
+                            padding-left: 35px
+
+                            &.active
+                                border-bottom-right-radius: 0px
+                                border-bottom-left-radius: 0px
+                                box-shadow: none
+
+                        span
+                            position: absolute
+                            top: 50%
+                            transform: translateY(-50%)
+                            left: 12px
+                            z-index: 10
+                            color: $lightText
+
+                        .searchItemContainer
+                            position: absolute
+                            top: 100%
+                            left: 0
+                            right: 0
+                            margin: 0
+                            max-height: 350px
+                            z-index: 10
+                            overflow: hidden
+                            overflow-y: scroll
+                            list-style-type: none
+                            background-color: $whiteBg
+                            border: 1px solid $darkBorder
+                            border-top: none
+                            display: none
+
+                            &.active
+                                display: block
+
+                            .applicationItem
+                                @include applicationItemStyles
+
+                                .applicationDetails
+                                    display: none
+
+                    .seeMarketPlace
+                        width: 300px
+                        border-radius: 0
+                        text-decoration: none
+
+                .recommendedApplication,
+                .choosenApplication,
+                .snapshotsApplication
+                    margin-top: 50px
+
+                    h4
+                        margin-bottom: 25px
+                    
+                    .recommendedAppContainer,
+                    .choosenAppContainer,
+                    .snapshotsAppContainer
+                        // layout styles
+                        display: grid
+                        grid-template-columns: 1fr 1fr 1fr
+                        grid-gap: 25px
+
+                        .applicationItem
+                            @include applicationItemStyles
+                            border: 1px solid $darkBorder!important
+                            border-radius: 5px
+
+                    &.choosenApplication
+                        display: none
+
+                        &.active
+                            display: grid
+
+            &#customImageTab
+                h4
+                    margin-bottom: 25px
+
+                .customImageConatiner
+                    display: flex
+                    align-items: start
+
+                    .uploadCustomImage
+                        max-width: 200px
+                        position: relative
+                        padding: 15px
+                        cursor: pointer
+                        border-radius: 0
+                        overflow: hidden
+                        
+                        input
+                            cursor: pointer
+                            position: absolute
+                            top: 0
+                            left: 0
+                            right: 0
+                            bottom: 0
+                            opacity: 0
+                    
+                    .importViaUrl
+                        margin-left: 15px
+                        max-width: calc( 100% - 215px )
+
+                        .importUrlBtn
+                            padding: 15px
+                            border-radius: 0
+
+                        .wrapperForImportUrlModal
+                            position: fixed
+                            top: 0
+                            left: 0
+                            bottom: 0
+                            right: 0
+                            background-color: $darkBorder
+                            z-index: 99999
+                            display: none
+
+                            &.active
+                                display: block
+
+                            .importUrlBox
+                                position: fixed
+                                top: 50%
+                                left: 50%
+                                transform: translate(-50%, -50%)
+                                width: 50%
+                                padding: 25px
+                                background-color: $whiteBg
+                                box-shadow: 1px 1px 2px 1px $darkBorder
+                                border-radius: 10px
+
+                                h5
+                                    margin-bottom: 15px
+                                
+
+                                input
+                                    border-radius: 0
+                                    margin-bottom: 25px
+
+                                button
+                                    border-radius: 0px
+                                    display: inline-block
+                                    
+                                    &.cancelUrl
+                                        background-color: $dangerColor
+                                        margin-right: 10px
+
+                                        &:hover
+                                            background-color: $dangerHoverColor
+    
+    .sshAlert
+        display: flex
+        align-items: center
+        span
+            display: block
+            width: 25px
+            font-size: 20px
+            color: $linkText
+
+            &:last-child
+                width: calc( 100% - 25px )
+                font-size: 16px
+                color: $lightText
+                            

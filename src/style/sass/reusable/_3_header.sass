@@ -9,7 +9,6 @@
     box-shadow: 1px 1px 2px 1px grey
     z-index: 99
     margin: 0 -25px
-    margin-bottom: 35px
 
     // layout styles
     display: flex
@@ -158,77 +157,76 @@
 
 // -----------------------------------------------
 // dropdown lsit styles start
-.mainNav
-    .seconderyItem
-        position: relative
+.seconderyItem
+    position: relative
 
-        &.slided
-            &::before
-                position: absolute
-                top: 100%
-                left: 50%
-                transform: translateX(-50%)
-                width: 200px
-                height: 100px
-                z-index: -1
-                content: ''
-                background-color: transparent
-
-        ul.seconderyList
+    &.slided
+        &::before
             position: absolute
             top: 100%
             left: 50%
-            transform: translate(-50%)
-            background-color: $whiteBg
+            transform: translateX(-50%)
             width: 200px
-            max-height: 100vh
-            border-radius: 5px
-            margin-top: 25px
-            box-shadow: 1px 1px 2px 1px $darkBorder
-            overflow: visible
-            z-index: 999
+            height: 100px
+            z-index: 0
+            content: ''
+            background-color: transparent
+
+    ul.seconderyList
+        position: absolute
+        top: 100%
+        left: 50%
+        transform: translate(-50%)
+        background-color: $whiteBg
+        width: 200px
+        max-height: 100vh
+        border-radius: 5px
+        margin-top: 25px
+        box-shadow: 1px 1px 2px 1px $darkBorder
+        overflow: visible
+        z-index: 999
+        transition: .3s
+        display: none
+
+        &.slided
+            display: block
+            @include fadInAnimationStyles
+
+        &::before
+            @include dropDownIndicatorStyle
+            border-bottom: 15px solid $darkBorder
+    
+        &::after
+            @include dropDownIndicatorStyle
+            top: -14px
+
+        li
+            padding: 10px 15px
             transition: .3s
-            display: none
+            display: block
+            border-bottom: 1px solid $offWhite
 
-            &.slided
+            &:hover
+                background-color: $offWhite
+
+            a
+                font-size: 16px
+                text-transform: capitalize
                 display: block
-                @include fadInAnimationStyles
-
+    
+    &.userProfile
+        &.slided
             &::before
-                @include dropDownIndicatorStyle
-                border-bottom: 15px solid $darkBorder
-        
-            &::after
-                @include dropDownIndicatorStyle
-                top: -14px
-
-            li
-                padding: 10px 15px
-                transition: .3s
-                display: block
-                border-bottom: 1px solid $offWhite
-
-                &:hover
-                    background-color: $offWhite
-
-                a
-                    font-size: 16px
-                    text-transform: capitalize
-                    display: block
-        
-        &.userProfile
-            &.slided
-                &::before
-                    left: auto
-                    right: 0
-                    transform: translateX(0%)
-
-            ul.seconderyList
                 left: auto
                 right: 0
-                transform: translate(0%)
+                transform: translateX(0%)
 
-                &::before,
-                &::after
-                    left: auto
-                    right: 0
+        ul.seconderyList
+            left: auto
+            right: 0
+            transform: translate(0%)
+
+            &::before,
+            &::after
+                left: auto
+                right: 0

@@ -147,6 +147,7 @@
 
 	<!-- main content start -->
 	<main class="mainContent">
+		<!-- main navigation bar -->
 		<nav class="mainNav">
 			<!-- side menu slider -->
 			<a class="sideMenuSlider">
@@ -242,6 +243,39 @@
 				</li>
 			</ul>
 		</nav>
+		<!-- step bredcrumbs -->
+		<ul class="stepBredvcrumbs">
+			<li>
+				<a class="active" href="">
+					<span>1.</span>
+					Plan
+				</a>
+			</li>
+			<li>
+				<a class="" href="chooseOs.html">
+					<span>2.</span>
+					OS
+				</a>
+			</li>
+			<li>
+				<a class="" href="">
+					<span>3.</span>
+					Location
+				</a>
+			</li>
+			<li>
+				<a class="" href="">
+					<span>4.</span>
+					Configuration
+				</a>
+			</li>
+			<li>
+				<a class="" href="">
+					<span>5.</span>
+					Submit
+				</a>
+			</li>
+		</ul>
 		<!-- content header portion -->
 		<div class="contentHeader">
 			<h2>
@@ -252,6 +286,7 @@
 				<i class="fas fa-external-link-alt"></i>
 			</a>
 		</div>
+
 		<!-- content for choose a plan start -->
 		<div class="cpTabHeader">
 			<div class="cpTabLeft">
@@ -1205,10 +1240,14 @@
 						</div>
 						<h4 class="fileSystemOption">
 							Choose Files system
-							<input id="fileSystem1" type="radio" name="fileSystem" checked>
-							<label for="fileSystem1">EXT4</label>
-							<input id="fileSystem2" type="radio" name="fileSystem">
-							<label for="fileSystem2">XFS</label>
+							<span>
+								<input id="fileSystem1" type="radio" name="fileSystem" checked>
+								<label for="fileSystem1">EXT4</label>
+							</span>
+							<span>
+								<input id="fileSystem2" type="radio" name="fileSystem">
+								<label for="fileSystem2">XFS</label>
+							</span>
 						</h4>
 					</div>
 					<button class="removeVolume btn">
@@ -1217,6 +1256,11 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- next step button -->
+		<a class="nextStepBtn button" href="chooseOs.html">
+			Go to next step 
+		</a>
 	</main>
 
 	<!-- including jquery -->
@@ -1229,5 +1273,6 @@
 	<!-- custom js -->
 	<script src="src/script/custom/main.js"></script>
 	<script src="src/script/custom/reusbale/sideBar.js"></script>
+	<script src="src/script/custom/unique/choosePlan.js"></script>
 </body>
 </html>

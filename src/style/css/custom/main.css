@@ -62,9 +62,13 @@ body {
   transition: .3s;
 }
 
-* button {
+* button,
+* .button {
   display: block;
+  text-align: center;
   padding: 10px 25px;
+  font-size: 16px;
+  line-height: 1.2;
   text-transform: capitalize;
   background-color: #009EFF;
   border-radius: 10px;
@@ -72,8 +76,10 @@ body {
   color: #fff;
 }
 
-* button:hover {
+* button:hover,
+* .button:hover {
   background-color: #006FFF;
+  color: #fff;
 }
 
 /* importing reusable styles */
@@ -151,6 +157,36 @@ main.mainContent.slided {
   margin-left: 0;
 }
 
+main.mainContent .stepBredvcrumbs {
+  padding: 20px 15px;
+  background-color: #f5f5f5;
+  margin: 0 -25px;
+  margin-bottom: 35px;
+  list-style-type: none;
+  text-align: center;
+}
+
+main.mainContent .stepBredvcrumbs li {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+main.mainContent .stepBredvcrumbs li a {
+  font-size: 20px;
+  color: #3A4349;
+  font-weight: 600;
+  text-decoration: none;
+  transition: .3s;
+}
+
+main.mainContent .stepBredvcrumbs li a.active {
+  color: #009EFF;
+}
+
+main.mainContent .stepBredvcrumbs li a:hover {
+  color: #009EFF;
+}
+
 main.mainContent .contentHeader {
   display: flex;
   flex-wrap: wrap;
@@ -177,6 +213,13 @@ main.mainContent .contentHeader a i {
   margin-left: 5px;
 }
 
+main.mainContent .nextStepBtn {
+  border-radius: 0;
+  padding: 15px;
+  text-decoration: none;
+  margin-top: 50px;
+}
+
 .mainNav {
   padding: 10px 15px;
   padding-left: 95px;
@@ -186,7 +229,6 @@ main.mainContent .contentHeader a i {
   box-shadow: 1px 1px 2px 1px grey;
   z-index: 99;
   margin: 0 -25px;
-  margin-bottom: 35px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -352,23 +394,23 @@ main.mainContent .contentHeader a i {
   color: #5f6060;
 }
 
-.mainNav .seconderyItem {
+.seconderyItem {
   position: relative;
 }
 
-.mainNav .seconderyItem.slided::before {
+.seconderyItem.slided::before {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
   width: 200px;
   height: 100px;
-  z-index: -1;
+  z-index: 0;
   content: '';
   background-color: transparent;
 }
 
-.mainNav .seconderyItem ul.seconderyList {
+.seconderyItem ul.seconderyList {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -385,13 +427,13 @@ main.mainContent .contentHeader a i {
   display: none;
 }
 
-.mainNav .seconderyItem ul.seconderyList.slided {
+.seconderyItem ul.seconderyList.slided {
   display: block;
   animation-name: fadeInAnimation;
   animation-duration: .3s;
 }
 
-.mainNav .seconderyItem ul.seconderyList::before {
+.seconderyItem ul.seconderyList::before {
   position: absolute;
   top: -15px;
   left: 50%;
@@ -406,7 +448,7 @@ main.mainContent .contentHeader a i {
   border-bottom: 15px solid rgba(0, 0, 0, 0.25);
 }
 
-.mainNav .seconderyItem ul.seconderyList::after {
+.seconderyItem ul.seconderyList::after {
   position: absolute;
   top: -15px;
   left: 50%;
@@ -421,36 +463,36 @@ main.mainContent .contentHeader a i {
   top: -14px;
 }
 
-.mainNav .seconderyItem ul.seconderyList li {
+.seconderyItem ul.seconderyList li {
   padding: 10px 15px;
   transition: .3s;
   display: block;
   border-bottom: 1px solid #f5f5f5;
 }
 
-.mainNav .seconderyItem ul.seconderyList li:hover {
+.seconderyItem ul.seconderyList li:hover {
   background-color: #f5f5f5;
 }
 
-.mainNav .seconderyItem ul.seconderyList li a {
+.seconderyItem ul.seconderyList li a {
   font-size: 16px;
   text-transform: capitalize;
   display: block;
 }
 
-.mainNav .seconderyItem.userProfile.slided::before {
+.seconderyItem.userProfile.slided::before {
   left: auto;
   right: 0;
   transform: translateX(0%);
 }
 
-.mainNav .seconderyItem.userProfile ul.seconderyList {
+.seconderyItem.userProfile ul.seconderyList {
   left: auto;
   right: 0;
   transform: translate(0%);
 }
 
-.mainNav .seconderyItem.userProfile ul.seconderyList::before, .mainNav .seconderyItem.userProfile ul.seconderyList::after {
+.seconderyItem.userProfile ul.seconderyList::before, .seconderyItem.userProfile ul.seconderyList::after {
   left: auto;
   right: 0;
 }
@@ -797,8 +839,7 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 }
 
 .cpAddBlockStorage {
-  margin-top: 50px;
-  margin-bottom: 100px;
+  margin: 50px 0;
 }
 
 .cpAddBlockStorage .addStorageHeader {
@@ -949,13 +990,17 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   margin: 0;
 }
 
-.cpAddBlockStorage .addStorageContent .storageConfiguration .storageConfigOption .fileSystemOption input {
+.cpAddBlockStorage .addStorageContent .storageConfiguration .storageConfigOption .fileSystemOption span {
+  display: inline-block;
+}
+
+.cpAddBlockStorage .addStorageContent .storageConfiguration .storageConfigOption .fileSystemOption span input {
   margin-left: 10px;
   margin-right: 5px;
   cursor: pointer;
 }
 
-.cpAddBlockStorage .addStorageContent .storageConfiguration .storageConfigOption .fileSystemOption label {
+.cpAddBlockStorage .addStorageContent .storageConfiguration .storageConfigOption .fileSystemOption span label {
   cursor: pointer;
 }
 
@@ -971,6 +1016,626 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 .cpAddBlockStorage .addStorageContent .storageConfiguration .removeVolume:hover {
   background-color: #ED4F32;
   color: #fff;
+}
+
+.cosTabHeader {
+  margin: 50px 0;
+  list-style-type: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+.cosTabHeader .tabHeaderItem {
+  margin: 0px 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: .3s;
+}
+
+.cosTabHeader .tabHeaderItem:first-child {
+  margin-left: 0;
+}
+
+.cosTabHeader .tabHeaderItem:last-child {
+  margin-right: 0;
+}
+
+.cosTabHeader .tabHeaderItem .cosTabBtn {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #5f6060;
+  transition: .3s;
+}
+
+.cosTabHeader .tabHeaderItem:hover {
+  border-color: #009EFF;
+}
+
+.cosTabHeader .tabHeaderItem:hover .cosTabBtn {
+  color: #009EFF;
+}
+
+.cosTabHeader .tabHeaderItem.active {
+  border-color: #009EFF;
+}
+
+.cosTabHeader .tabHeaderItem.active .cosTabBtn {
+  color: #009EFF;
+}
+
+.cosTabContent .cosTabItem {
+  margin-bottom: 25px;
+  display: none;
+}
+
+.cosTabContent .cosTabItem.active {
+  display: block;
+}
+
+.cosTabContent .cosTabItem.active#distroTab, .cosTabContent .cosTabItem.active#containerDistroTab {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  text-align: center;
+  cursor: pointer;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem.active, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem.active {
+  border-color: #009EFF;
+  color: #009EFF;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem.active .distroBody, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem.active .distroBody {
+  border-color: #009EFF;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem.active p, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem.active p {
+  color: #009EFF;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroBody, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroBody {
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroBody img, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroBody img {
+  width: 50px;
+  height: auto;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroBody p, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroBody p {
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter {
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter p, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter p {
+  margin: 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter p span, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter p span {
+  margin-left: 3px;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter p span i, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter p span i {
+  transition: .3s;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter p.slided span i, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter p.slided span i {
+  transform: rotate(180deg);
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter.slided::before, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter.slided::before {
+  width: 100%;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter ul.seconderyList, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter ul.seconderyList {
+  text-align: left;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter ul.seconderyList::before, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter ul.seconderyList::before {
+  left: 85%;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter ul.seconderyList::after, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter ul.seconderyList::after {
+  top: -13px;
+  left: 85%;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter ul.seconderyList li a, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter ul.seconderyList li a {
+  color: #5f6060;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroFooter ul.seconderyList li a:hover, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroFooter ul.seconderyList li a:hover {
+  color: #009EFF;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace {
+  width: calc( 100% - 325px);
+  position: relative;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace input, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace input {
+  padding: 7.5px 10px;
+  padding-left: 35px;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace input.active, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace input.active {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  box-shadow: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace span, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  z-index: 10;
+  color: #5f6060;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  max-height: 350px;
+  z-index: 10;
+  overflow: hidden;
+  overflow-y: scroll;
+  list-style-type: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-top: none;
+  display: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer.active, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer.active {
+  display: block;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem {
+  border-bottom: 2px solid #f5f5f5;
+  padding: 15px;
+  cursor: pointer;
+  transition: .3s;
+  display: flex;
+  position: relative;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem:hover, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem:hover {
+  background-color: #f5f5f5;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem.active, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem.active {
+  border-color: #009EFF !important;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem:last-child, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem:last-child {
+  border: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicationDetails, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicationDetails {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 14px;
+  color: #009EFF;
+  z-index: 1;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem img, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem img {
+  margin-top: 2.5px;
+  width: 30px;
+  height: 30px;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicatIonfo, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicatIonfo {
+  max-width: calc( 100% - 40px);
+  margin-left: 10px;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicatIonfo h4, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicatIonfo h4 {
+  margin-bottom: 2px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicatIonfo p, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicatIonfo p {
+  margin: 0;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicationDetails, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicationDetails {
+  display: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .seeMarketPlace, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .seeMarketPlace {
+  width: 300px;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication {
+  margin-top: 50px;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication h4,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication h4,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication h4, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication h4,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication h4,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication h4 {
+  margin-bottom: 25px;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem {
+  border-bottom: 2px solid #f5f5f5;
+  padding: 15px;
+  cursor: pointer;
+  transition: .3s;
+  display: flex;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.25) !important;
+  border-radius: 5px;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem:hover, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem:hover,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem:hover {
+  background-color: #f5f5f5;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem.active, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem.active,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem.active {
+  border-color: #009EFF !important;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem:last-child, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem:last-child,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem:last-child {
+  border: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicationDetails, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem .applicationDetails,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicationDetails {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 14px;
+  color: #009EFF;
+  z-index: 1;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem img, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem img {
+  margin-top: 2.5px;
+  width: 30px;
+  height: 30px;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicatIonfo, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem .applicatIonfo,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicatIonfo {
+  max-width: calc( 100% - 40px);
+  margin-left: 10px;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicatIonfo h4, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem .applicatIonfo h4,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicatIonfo h4 {
+  margin-bottom: 2px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicatIonfo p, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem .applicatIonfo p,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicatIonfo p {
+  margin: 0;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication.choosenApplication,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication.choosenApplication,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication.choosenApplication, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication.choosenApplication,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication.choosenApplication,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication.choosenApplication {
+  display: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication.choosenApplication.active,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication.choosenApplication.active,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication.choosenApplication.active, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication.choosenApplication.active,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication.choosenApplication.active,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication.choosenApplication.active {
+  display: grid;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab h4 {
+  margin-bottom: 25px;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner {
+  display: flex;
+  align-items: start;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .uploadCustomImage {
+  max-width: 200px;
+  position: relative;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .uploadCustomImage input {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl {
+  margin-left: 15px;
+  max-width: calc( 100% - 215px);
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .importUrlBtn {
+  padding: 15px;
+  border-radius: 0;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 99999;
+  display: none;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal.active {
+  display: block;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal .importUrlBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  padding: 25px;
+  background-color: #fff;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal .importUrlBox h5 {
+  margin-bottom: 15px;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal .importUrlBox input {
+  border-radius: 0;
+  margin-bottom: 25px;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal .importUrlBox button {
+  border-radius: 0px;
+  display: inline-block;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal .importUrlBox button.cancelUrl {
+  background-color: #ED4F32;
+  margin-right: 10px;
+}
+
+.cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal .importUrlBox button.cancelUrl:hover {
+  background-color: #DD4F32;
+}
+
+.cosTabContent .sshAlert {
+  display: flex;
+  align-items: center;
+}
+
+.cosTabContent .sshAlert span {
+  display: block;
+  width: 25px;
+  font-size: 20px;
+  color: #009EFF;
+}
+
+.cosTabContent .sshAlert span:last-child {
+  width: calc( 100% - 25px);
+  font-size: 16px;
+  color: #5f6060;
 }
 
 /* general style */
