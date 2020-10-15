@@ -5,6 +5,26 @@ $(window).on('load', function(){
 });
 
 // -----------------------------------------------
+// scroll top btn
+$(document).ready(function(){
+
+	$(window).scroll(function() {
+		var windowScroll= $(window).scrollTop()
+		
+		if (windowScroll > 100) {
+			$(".scrollTop").addClass("active");
+		}else{
+			$(".scrollTop").removeClass("active");
+		}
+	});
+
+	$(".scrollTop").click(function(){
+		$(document).scrollTop(0);
+	});
+});
+
+
+// -----------------------------------------------
 // activating tooltip
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();

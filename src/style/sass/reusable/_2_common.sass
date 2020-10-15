@@ -47,6 +47,30 @@
 		opacity: 0
 		visibility: hidden
 
+// scroll top button
+.scrollTop
+	height: 50px
+	width: 50px
+	line-height: 50px
+	font-size: 25px
+	padding: 0
+	border-radius: 0
+	border: 1px solid $whiteBg
+	background-color: $linkText
+	color: $whiteText
+	z-index: 99999
+	display: none
+	transition: .3s
+
+	// layout styles
+	position: fixed
+	bottom: 5%
+	right: 5%
+
+	&.active
+		@include fadInAnimationStyles
+		display: block
+
 // main content styles
 // ===================
 main.mainContent
