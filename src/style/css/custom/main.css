@@ -1854,6 +1854,40 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   margin-bottom: 0;
 }
 
+.scForm .form-group.configOption .configItemContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.scForm .form-group.configOption .configItemContainer .configItem {
+  padding: 15px;
+  display: flex;
+  align-items: start;
+}
+
+.scForm .form-group.configOption .configItemContainer .configItem.active {
+  border-color: #009EFF;
+}
+
+.scForm .form-group.configOption .configItemContainer .configItem input {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.scForm .form-group.configOption .configItemContainer .configItem .configOptionText {
+  width: calc( 100% - 50px);
+}
+
+.scForm .form-group.configOption .configItemContainer .configItem .configOptionText h5 {
+  margin-bottom: 3px;
+}
+
+.scForm .form-group.configOption .configItemContainer .configItem .configOptionText p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
 .pasContentConatiner .pasContentItem {
   margin-bottom: 50px;
 }
