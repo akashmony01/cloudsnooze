@@ -26,30 +26,55 @@
 
         .backupsSpecial
             padding: 15px 15px
-            display: flex!important
+
+            // layout styles
+            display: flex
             align-items: start
+            justify-content: space-between
+            flex-wrap: wrap
 
-            input
-                margin-top: 3px
-                margin-right: 7.5px
-                width: 20px
-            
-            .labelBox
-                width: calc( 100% - 30px )
+            .backupsLeft
+                display: flex
+                align-items: start
 
-                label
+                input
+                    margin-top: 3px
+                    margin-right: 7.5px
+                    width: 20px
+                
+                .labelBox
+                    width: calc( 100% - 30px )
+
+                    label
+                        margin-bottom: 2px
+                        margin-bottom: 3px
+                        font-size: 20px
+
+                        span
+                            font-size: 16px
+                            background-color: $linkText
+                            padding: 0px 10px
+                            border-radius: 5px
+                            color: $whiteText
+
+                    p
+                        margin: 0
+                        a
+                            color: $linkText
+
+            .backupsRight
+                h6
+                    font-weight: 400
+                    font-size: 16px
                     margin-bottom: 2px
-                    margin-bottom: 3px
-                    font-size: 20px
+                    color: $lightText
 
                     span
-                        font-size: 16px
-                        background-color: $linkText
-                        padding: 0px 10px
-                        border-radius: 5px
-                        color: $whiteText
+                        font-size: 18px
+                        font-weight: 700
+                        color: $darkText
+
 
                 p
-                    margin: 0
-                    a
-                        color: $linkText
+                    font-size: 14px
+                    margin-bottom: 0

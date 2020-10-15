@@ -246,131 +246,184 @@
 			</ul>
 		</nav>
 		<!-- step bredcrumbs -->
-		<ul class="stepBredvcrumbs">
-			<li>
-				<a class="" href="index.html">
-					<span>1.</span>
-					Plan
-				</a>
-			</li>
-			<li>
-				<a class="" href="chooseOs.html">
-					<span>2.</span>
-					OS
-				</a>
-			</li>
-			<li>
-				<a class="" href="chooseLocation.html">
-					<span>3.</span>
-					Location
-				</a>
-			</li>
-			<li>
-				<a class="active" href="setConfiguration.html">
-					<span>4.</span>
-					Configuration
-				</a>
-			</li>
-			<li>
-				<a class="" href="previewAndSubmit.html">
-					<span>5.</span>
-					Submit
-				</a>
-			</li>
-		</ul>
-		<!-- content header portion -->
-		<div class="contentHeader">
-			<h2>
-				Required Configuration Options
-			</h2>
-        </div>
+		<h4 class="stepBredvcrumbs">
+			Preview your given information and submit request
+		</h4>
         
-        <!-- configuration from -->
-        <form class="scForm">
-            <div class="form-group">
-                <label for="adminUserName">
-                    Admin User Name
-                </label>
-                <input id="adminUserName" class="form-control" type="text">
-            </div>
-            <div class="form-group">
-                <label for="adminUserPass">
-                    Admin User Password
-                </label>
-                <input id="adminUserPass" class="form-control" type="password">
-            </div>
-            <div class="form-group">
-                <label for="confirmPass">
-                    Confirm Password
-                </label>
-                <input id="confirmPass" class="form-control" type="password">
-            </div>
-            <div class="form-group">
-                <label for="sshKey" class="spiltLabel">
-                    SSH key
-                    <a href="">
-                        New SSH key
-                    </a>
-                </label>
-                <textarea id="sshKey" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="tags">
-                    Tags
-                </label>
-                <input id="confirmPtagsass" class="form-control" type="text">
-            </div>
-            <div class="form-group">
-                <label for="project">
-                    Select A Project
-                </label>
-                <select class="form-control" id="project">
-                    <option value="">
-                        Project One
-                    </option>
-                    <option value="">
-                        Project Two
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>
-                    Add Backups
-                </label>
-                <div class="form-control backupsSpecial">
-                    <div class="backupsLeft">
-						<input id="backups" type="checkbox">
-						<div class="labelBox">
-							<label for="backups">
-								Enable backups
-								<span>
-									Recommended
-								</span>
-							</label>
-							<p>
-								Lorem ipsum dolor sit amet.
-								<a href="">Link One</a>
-							</p>
-						</div>
-					</div>
-					<div class="backupsRight">
-						<h6>
-							<span>
-								$8
-							</span>
-							/mo (per drplet)
-						</h6>
+		<!-- content for preview information -->
+		<div class="pasContentConatiner">
+			<div class="pasContentItem">
+				<h3>
+					Choosen Plan
+					<a href="index.html">
+						Edit Info
+					</a>
+				</h3>
+				<p>
+					Shared CPU > Basic
+				</p>
+				<h4>
+					$90 /month
+					<span>
+						($2.50 /hour)
+					</span>
+				</h4>
+				<ul>
+					<p>
+						More info in details
+					</p>
+					<li>
+						16 GB /8 CPUs
+					</li>
+					<li>
+						320 GB SSD disk
+					</li>
+					<li>
+						6 TB transfer
+					</li>
+				</ul>
+			</div>
+			<div class="pasContentItem">
+				<h3>
+					Added Block Storage
+					<a href="index.html">
+						Edit Info
+					</a>
+				</h3>
+				<p>
+					Automatically format and mount > EXT4
+				</p>
+				<h4>
+					100 GB
+				</h4>
+				<ul>
+					<p>
+						More info in details
+					</p>
+					<li>
+						$90 /month
+					</li>
+					<li>
+						($2.50 /hour)
+					</li>
+				</ul>
+			</div>
+			<div class="pasContentItem">
+				<h3>
+					Choosen Operating System
+					<a href="chooseOs.html">
+						Edit Info
+					</a>
+				</h3>
+				<p>
+					OS Type > Marketplace
+				</p>
+				<h4>
+					<img src="src/file/image/ubuntu-logo.png" alt="ubuntu">
+					Ubunutu 2.01
+				</h4>
+				<ul>
+					<p>
+						More info in details
+					</p>
+					<li>
+						Version 2.01
+					</li>
+					<li>
+						SSH key required
+					</li>
+				</ul>
+			</div>
+			<div class="pasContentItem">
+				<h3>
+					Choosen Location for machine
+					<a href="chooseLocation.html">
+						Edit Info
+					</a>
+				</h3>
+				<p>
+					Bangladesh > Server 1
+				</p>
+				<h4>
+					<img src="src/file/image/bangladesh.png" alt="ubuntu">
+					Bangladesh
+				</h4>
+				<ul>
+					<p>
+						More info in details
+					</p>
+					<li>
+						VPC Network
+					</li>
+					<li>
+						default-nyc1
+					</li>
+				</ul>
+			</div>
+			<div class="pasContentItem">
+				<h3>
+					Configuration Information
+					<a href="setConfiguration.html">
+						Edit Info
+					</a>
+				</h3>
+				<p>
+					Configuration Type > SSH Key
+				</p>
+				<ul class="configList">
+					<li>
+						<h5>
+							Admin User Name
+						</h5>
 						<p>
-							20% off for winter sale.
+							iamAdmin01
 						</p>
-					</div>
-                </div>
-            </div>
-        </form>
+					</li>
+					<li>
+						<h5>
+							SSH Key
+						</h5>
+						<p>
+							Loremipsumdolorsitametconsectetur,
+							adipisicingelit.Quod,beataesnonmolestiastemporanobi.
+							sarchitectototamomnisconsecteturcorr.
+							Voluptatumtemporaenimmagni?
+						</p>
+					</li>
+					<li>
+						<h5>
+							Added Tags
+						</h5>
+						<p>
+							Tag1, tag22, tag333, tag4444
+						</p>
+					</li>
+					<li>
+						<h5>
+							Selected Project
+						</h5>
+						<p>
+							Project One
+						</p>
+					</li>
+					<li>
+						<h5>
+							Backups Syste.
+						</h5>
+						<p>
+							Backup system is enabled.
+							<span>
+								(this will cost you $8 /month only)
+							</span>
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 		<!-- next step button -->
-		<a class="nextStepBtn button" href="previewAndsubmit.html">
-			Go to next step 
+		<a class="nextStepBtn button" href="">
+			Submit Request
 		</a>
 	</main>
 
