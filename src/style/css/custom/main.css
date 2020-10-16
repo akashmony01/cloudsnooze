@@ -188,7 +188,7 @@ main.mainContent.slided {
 }
 
 main.mainContent .stepBredvcrumbs {
-  padding: 20px 15px;
+  padding: 20px 25px;
   background-color: #f5f5f5;
   margin: 0 -25px;
   margin-bottom: 35px;
@@ -200,6 +200,10 @@ main.mainContent .stepBredvcrumbs {
 main.mainContent .stepBredvcrumbs li {
   display: inline-block;
   padding: 5px 10px;
+}
+
+main.mainContent .stepBredvcrumbs li:first-child {
+  padding-left: 0;
 }
 
 main.mainContent .stepBredvcrumbs li a {
