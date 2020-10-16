@@ -59,3 +59,31 @@ $(document).ready(function(){
 		$(".seconderyList").removeClass("slided");
 	});
 });
+
+
+// ------------------------------------------------
+// main menu search icon show hide in mobile
+$(document).ready(function() {
+    // show suggestion
+    $( "#search" ).focusin(function() {
+		$(".mainNav").addClass("droppedSearch");
+		$(".mainNav").removeClass("droppedMenu");
+    });
+    // remove suggestion
+    $(document).click (function (e) {
+        if (e.target != $('#search')[0]) {
+            $(".mainNav").removeClass("droppedSearch");
+        }
+    });
+});
+
+
+// ------------------------------------------------
+// main menu show hide in mobile
+$(document).ready(function() {
+    // show suggestion
+    $( "#mainNavRightMobileOpener" ).click(function() {
+		$(".mainNav").toggleClass("droppedMenu");
+    });
+});
+mainNavRightMobileOpener

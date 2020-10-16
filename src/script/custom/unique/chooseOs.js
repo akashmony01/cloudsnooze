@@ -67,7 +67,7 @@ $(document).ready(function() {
     // remove suggestion
     $(document).click (function (e) {
         if (e.target != $('#searchMarketPlace')[0]) {
-            $( this ).removeClass("active");
+            $( "#searchMarketPlace" ).removeClass("active");
             $( ".searchItemContainer" ).removeClass("active");
         }
     });

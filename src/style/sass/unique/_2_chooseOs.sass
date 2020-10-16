@@ -257,13 +257,11 @@
                             display: none
 
                             &.active
-                                display: block
+                                display: flex
+                                align-items: center
+                                justify-content: center
 
                             .importUrlBox
-                                position: fixed
-                                top: 50%
-                                left: 50%
-                                transform: translate(-50%, -50%)
                                 width: 50%
                                 padding: 25px
                                 background-color: $whiteBg
@@ -281,6 +279,7 @@
                                 button
                                     border-radius: 0px
                                     display: inline-block
+                                    margin: 5px 0
                                     
                                     &.cancelUrl
                                         background-color: $dangerColor
@@ -302,4 +301,90 @@
                 width: calc( 100% - 25px )
                 font-size: 16px
                 color: $lightText
-                            
+
+
+// ===================================================
+// responsive styles
+@media only screen and (max-width: 767px)
+    .cosTabHeader
+        text-align: center
+        padding-bottom: 15px
+
+        .tabHeaderItem
+            margin: 2.5px 5px
+            padding: 0
+            border-bottom: none
+
+    
+    .cosTabContent
+        .cosTabItem
+            &.active            
+                &#distroTab,
+                &#containerDistroTab
+                    grid-template-columns: 1fr 1fr
+
+                &#marketPlaceTab,
+                &#snapshotsTab
+                    .exploreMarketPLace
+                        flex-direction: column
+
+                        .searchMarketPLace
+                            width: 100%
+                            margin-bottom: 15px
+                        
+                        .seeMarketPlace
+                            width: 100%
+
+                    .recommendedApplication,
+                    .choosenApplication,
+                    .snapshotsApplication
+
+                        .recommendedAppContainer,
+                        .choosenAppContainer,
+                        .snapshotsAppContainer
+                            grid-template-columns: 1fr 1fr
+
+                &#customImageTab
+                    .customImageConatiner
+                        .importViaUrl
+                            .wrapperForImportUrlModal
+                                .importUrlBox
+                                    width: 80%
+
+@media only screen and (max-width: 575px)
+    .cosTabContent
+        .cosTabItem
+            &.active
+                &#marketPlaceTab,
+                &#snapshotsTab
+                    .recommendedApplication,
+                    .choosenApplication,
+                    .snapshotsApplication
+                        .recommendedAppContainer,
+                        .choosenAppContainer,
+                        .snapshotsAppContainer
+                            grid-template-columns: 1fr
+
+@media only screen and (max-width: 480px)
+    .cosTabContent
+        .cosTabItem
+            &.active            
+                &#distroTab,
+                &#containerDistroTab
+                    grid-template-columns: 1fr
+
+                &#customImageTab
+                    .customImageConatiner
+                        flex-direction: column
+                        .uploadCustomImage
+                            max-width: 100%
+                            width: 100%
+                            margin-bottom: 15px
+
+                        .importViaUrl
+                            max-width: 100%
+                            width: 100%
+                            margin: 0
+
+                            button
+                                width: 100% 

@@ -193,7 +193,6 @@ main.mainContent .stepBredvcrumbs {
   margin: 0 -25px;
   margin-bottom: 35px;
   list-style-type: none;
-  text-align: center;
   padding-right: 115px;
   position: relative;
 }
@@ -235,6 +234,10 @@ main.mainContent .stepBredvcrumbs .backBtn {
   align-items: center;
   justify-content: center;
   padding-bottom: 5px;
+}
+
+main.mainContent .stepBredvcrumbs .backBtn:hover {
+  background-color: #006FFF;
 }
 
 main.mainContent .stepBredvcrumbs .backBtn i {
@@ -280,6 +283,23 @@ main.mainContent .nextStepBtn {
   }
   main.mainContent.slided {
     transform: translateX(200px);
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  main.mainContent .contentHeader a {
+    margin-top: 25px;
+  }
+  main.mainContent .stepBredvcrumbs {
+    padding: 15px;
+    text-align: center;
+  }
+  main.mainContent .stepBredvcrumbs .backBtn {
+    position: static;
+    width: calc( 100% + 30px);
+    padding: 10px;
+    margin: -15px;
+    margin-top: 15px;
   }
 }
 
@@ -457,6 +477,15 @@ main.mainContent .nextStepBtn {
   color: #5f6060;
 }
 
+.mainNav ul.mainNavRight .hideInMobile #mainNavRightMobileOpener {
+  display: none;
+}
+
+.mainNav ul.mainNavRight .hideInMobile span {
+  display: flex;
+  align-items: center;
+}
+
 .seconderyItem {
   position: relative;
 }
@@ -558,6 +587,98 @@ main.mainContent .nextStepBtn {
 .seconderyItem.userProfile ul.seconderyList::before, .seconderyItem.userProfile ul.seconderyList::after {
   left: auto;
   right: 0;
+}
+
+@media only screen and (max-width: 575px) {
+  .mainNav {
+    padding-left: 75px;
+    transition: .3s;
+  }
+  .mainNav .mainNavLeft {
+    width: 25px !important;
+    height: 25px !important;
+    padding-left: 2.5px;
+    overflow: hidden;
+  }
+  .mainNav .mainNavLeft span > i {
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .mainNav .mainNavLeft span > i:hover {
+    color: #009EFF !important;
+  }
+  .mainNav .mainNavLeft input {
+    position: absolute;
+    top: 61px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    height: 0;
+    overflow: hidden;
+    padding: 0 5%;
+    transition: .3s;
+  }
+  .mainNav .hideInMobile {
+    height: 40px;
+    width: 55px;
+    overflow: hidden;
+  }
+  .mainNav .hideInMobile #mainNavRightMobileOpener {
+    display: block !important;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .mainNav .hideInMobile #mainNavRightMobileOpener:hover {
+    color: #009EFF;
+  }
+  .mainNav .hideInMobile span {
+    position: absolute;
+    top: 61px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    height: 0px;
+    transition: .3s;
+    overflow: hidden;
+    display: none !important;
+  }
+  .mainNav .hideInMobile span .seconderyItem.slided::before {
+    left: 10px;
+    transform: translateX(0);
+  }
+  .mainNav .hideInMobile span .seconderyItem .seconderyList {
+    left: 10px;
+    transform: translateX(0);
+  }
+  .mainNav .hideInMobile span .seconderyItem .seconderyList::before {
+    left: 30px;
+  }
+  .mainNav .hideInMobile span .seconderyItem .seconderyList::after {
+    left: 30px;
+  }
+  .mainNav.droppedSearch {
+    margin-bottom: 50px;
+  }
+  .mainNav.droppedSearch .mainNavLeft input {
+    height: 50px;
+  }
+  .mainNav.droppedMenu {
+    margin-bottom: 50px;
+  }
+  .mainNav.droppedMenu .hideInMobile #mainNavRightMobileOpener {
+    color: #009EFF;
+  }
+  .mainNav.droppedMenu .hideInMobile span {
+    height: 50px;
+    top: 61px;
+    display: flex !important;
+    overflow: visible;
+  }
 }
 
 aside.sideBar {
@@ -793,18 +914,7 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 
 .cpTabHeader .cpTabLeft.cpTabLeft .tabHeaderItem,
 .cpTabHeader .cpTabRight.cpTabLeft .tabHeaderItem {
-  position: relative;
-  height: calc( 100% - 40px);
-}
-
-.cpTabHeader .cpTabLeft.cpTabLeft .tabHeaderItem button,
-.cpTabHeader .cpTabRight.cpTabLeft .tabHeaderItem button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
+  grid-template-columns: 1fr;
 }
 
 .cpTabHeader .cpTabLeft.cpTabRight,
@@ -1035,7 +1145,7 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 .cpAddBlockStorage .addStorageContent .storageConfiguration .storageConfigOption {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 35px;
+  grid-gap: 25px;
 }
 
 .cpAddBlockStorage .addStorageContent .storageConfiguration .storageConfigOption .storageConfigItem {
@@ -1096,6 +1206,52 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 .cpAddBlockStorage .addStorageContent .storageConfiguration .removeVolume:hover {
   background-color: #ED4F32;
   color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+  .cpTabHeader {
+    flex-direction: column;
+  }
+  .cpTabHeader .cpTabLeft,
+  .cpTabHeader .cpTabRight {
+    width: 100% !important;
+  }
+  .cpTabHeader .cpTabLeft.cpTabLeft,
+  .cpTabHeader .cpTabRight.cpTabLeft {
+    margin-bottom: 25px;
+  }
+  .cpTabHeader .cpTabLeft .tabHeaderItem button::after,
+  .cpTabHeader .cpTabRight .tabHeaderItem button::after {
+    display: none;
+  }
+  .cpTabContent .tabConetent {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cpAddBlockStorage .addStorageContent .storageItemContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .cpAddBlockStorage .addStorageContent .storageConfiguration .storageConfigOption {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .cpTabHeader .cpTabRight .tabHeaderItem {
+    grid-template-columns: 1fr;
+  }
+  .cpTabHeader .cpTabRight .tabHeaderItem button {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  }
+  .cpTabContent .tabConetent {
+    grid-template-columns: 1fr;
+  }
+  .cpAddBlockStorage .addStorageContent .storageItemContainer {
+    grid-template-columns: 1fr;
+  }
 }
 
 .cosTabHeader {
@@ -1662,14 +1818,12 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 }
 
 .cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal.active {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal .importUrlBox {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 50%;
   padding: 25px;
   background-color: #fff;
@@ -1689,6 +1843,7 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 .cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal .importUrlBox button {
   border-radius: 0px;
   display: inline-block;
+  margin: 5px 0;
 }
 
 .cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal .importUrlBox button.cancelUrl {
@@ -1716,6 +1871,97 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   width: calc( 100% - 25px);
   font-size: 16px;
   color: #5f6060;
+}
+
+@media only screen and (max-width: 767px) {
+  .cosTabHeader {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .cosTabHeader .tabHeaderItem {
+    margin: 2.5px 5px;
+    padding: 0;
+    border-bottom: none;
+  }
+  .cosTabContent .cosTabItem.active#distroTab, .cosTabContent .cosTabItem.active#containerDistroTab {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace {
+    flex-direction: column;
+  }
+  .cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .seeMarketPlace, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .seeMarketPlace {
+    width: 100%;
+  }
+  .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl .wrapperForImportUrlModal .importUrlBox {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer,
+  .cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .cosTabContent .cosTabItem.active#distroTab, .cosTabContent .cosTabItem.active#containerDistroTab {
+    grid-template-columns: 1fr;
+  }
+  .cosTabContent .cosTabItem.active#customImageTab .customImageConatiner {
+    flex-direction: column;
+  }
+  .cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .uploadCustomImage {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  .cosTabContent .cosTabItem.active#customImageTab .customImageConatiner .importViaUrl button {
+    width: 100%;
+  }
 }
 
 .clItemContainer {
@@ -1832,6 +2078,18 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 .clLocatioinInfo p a {
   color: #009EFF;
   transition: .3s;
+}
+
+@media only screen and (max-width: 767px) {
+  .clItemContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .clItemContainer {
+    grid-template-columns: 1fr;
+  }
 }
 
 .scForm {
@@ -1961,6 +2219,25 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 .scForm .form-group.configOption .configItemContainer .configItem .configOptionText p {
   font-size: 14px;
   margin-bottom: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .scForm .form-group.configOption .configItemContainer {
+    grid-template-columns: 1fr;
+  }
+  .scForm .form-group.configOption .configItemContainer .configItem {
+    margin: 0px;
+  }
+  .scForm .form-group.configOption .configItemContainer .configItem:last-child {
+    margin-bottom: 15px;
+  }
+  .scForm .form-group .backupsSpecial {
+    flex-direction: column;
+  }
+  .scForm .form-group .backupsSpecial .backupsRight {
+    margin-top: 15px;
+    margin-left: 25px;
+  }
 }
 
 .pasContentConatiner .pasContentItem {

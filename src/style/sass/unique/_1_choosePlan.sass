@@ -71,16 +71,7 @@
         &.cpTabLeft
             width: 200px
             .tabHeaderItem
-                position: relative
-                height: calc( 100% - 40px )
-
-                button
-                    position: absolute
-                    top: 0
-                    left: 0
-                    right: 0
-                    bottom: 0
-                    width: 100%
+                grid-template-columns: 1fr
 
         &.cpTabRight
             width: calc( 100% - 215px )
@@ -186,7 +177,7 @@
                 // layout styles
                 display: grid
                 grid-template-columns: 1fr 1fr
-                grid-gap: 35px
+                grid-gap: 25px
 
                 .storageConfigItem
                     padding: 25px
@@ -237,3 +228,59 @@
                 &:hover
                     background-color: $dangerColor
                     color: $whiteText
+
+
+// responsive styles
+@media only screen and (max-width: 767px)
+    .cpTabHeader
+        flex-direction: column
+
+        .cpTabLeft,
+        .cpTabRight
+            width: 100%!important
+
+            &.cpTabLeft
+                margin-bottom: 25px
+
+            .tabHeaderItem
+                button
+                    &::after
+                        display: none
+
+    .cpTabContent
+        .tabConetent
+            grid-template-columns: 1fr 1fr
+
+    .cpAddBlockStorage
+        .addStorageContent            
+            .storageItemContainer
+                grid-template-columns: 1fr 1fr
+
+
+@media only screen and (max-width: 575px)
+    .cpAddBlockStorage
+        .addStorageContent
+            .storageConfiguration
+                .storageConfigOption
+                    grid-template-columns: 1fr
+
+
+
+@media only screen and (max-width: 480px)
+    .cpTabHeader
+        .cpTabRight
+            .tabHeaderItem
+                grid-template-columns: 1fr
+                
+                button
+                    border-right: none
+                    border-bottom: 1px solid $darkBorder
+    
+    .cpTabContent
+        .tabConetent
+            grid-template-columns: 1fr
+    
+    .cpAddBlockStorage
+        .addStorageContent            
+            .storageItemContainer
+                grid-template-columns: 1fr

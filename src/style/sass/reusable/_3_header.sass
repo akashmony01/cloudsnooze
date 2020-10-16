@@ -155,6 +155,15 @@
                             font-size: 20px
                             color: $lightText
 
+        .hideInMobile
+            #mainNavRightMobileOpener
+                display: none
+
+            span
+                display: flex
+                align-items: center
+
+        
 // -----------------------------------------------
 // dropdown lsit styles start
 .seconderyItem
@@ -212,8 +221,8 @@
             a
                 font-size: 16px
                 text-transform: capitalize
-                display: block
-    
+                display: block    
+
     &.userProfile
         &.slided
             &::before
@@ -230,3 +239,102 @@
             &::after
                 left: auto
                 right: 0
+
+
+// header responsive styles
+@media only screen and (max-width: 575px)
+    .mainNav
+        padding-left: 75px
+        transition: .3s
+
+        .mainNavLeft
+            width: 25px!important
+            height: 25px!important
+            padding-left: 2.5px
+            overflow: hidden
+
+            span > i
+                font-size: 20px
+                cursor: pointer
+                transition: .3s
+
+                &:hover
+                    color: $linkText!important
+
+            input
+                position: absolute
+                top: 61px
+                left: 0
+                right: 0
+                width: 100%
+                background-color: $whiteBg
+                border-bottom: 1px solid $darkBorder
+                height: 0
+                overflow: hidden
+                padding: 0 5%
+                transition: .3s
+
+            
+        .hideInMobile
+            height: 40px
+            width: 55px
+            overflow: hidden
+
+            #mainNavRightMobileOpener
+                display: block!important
+                line-height: 40px
+                text-transform: uppercase
+                font-weight: 700
+
+                &:hover
+                    color: $linkText
+            
+            span
+                position: absolute
+                top: 61px
+                left: 0
+                right: 0
+                background-color: $whiteBg
+                border-bottom: 1px solid $darkBorder
+                height: 0px
+                transition: .3s
+                overflow: hidden
+                display: none!important
+
+                .seconderyItem
+                    &.slided
+                        &::before
+                            left: 10px
+                            transform: translateX(0)
+
+                    .seconderyList
+                        left: 10px
+                        transform: translateX(0)
+
+                        &::before
+                            left: 30px
+                    
+                        &::after
+                            left: 30px
+
+
+        // style for dropped item
+        &.droppedSearch
+            margin-bottom: 50px
+            
+            .mainNavLeft
+                input
+                    height: 50px
+
+        &.droppedMenu
+            margin-bottom: 50px
+
+            .hideInMobile
+                #mainNavRightMobileOpener
+                    color: $linkText
+                    
+                span
+                    height: 50px
+                    top: 61px
+                    display: flex!important
+                    overflow: visible

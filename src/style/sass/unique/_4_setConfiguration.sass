@@ -109,3 +109,24 @@
                             font-size: 14px
                             margin-bottom: 0
 
+
+// responsive styles
+@media only screen and (max-width: 767px)
+    .scForm
+        .form-group
+            &.configOption
+                .configItemContainer
+                    grid-template-columns: 1fr
+
+                    .configItem
+                        margin: 0px
+
+                        &:last-child
+                            margin-bottom: 15px
+            
+            .backupsSpecial
+                flex-direction: column
+
+                .backupsRight
+                    margin-top: 15px
+                    margin-left: 25px
