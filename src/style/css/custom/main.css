@@ -194,6 +194,8 @@ main.mainContent .stepBredvcrumbs {
   margin-bottom: 35px;
   list-style-type: none;
   text-align: center;
+  padding-right: 115px;
+  position: relative;
 }
 
 main.mainContent .stepBredvcrumbs li {
@@ -215,6 +217,28 @@ main.mainContent .stepBredvcrumbs li a.active {
 
 main.mainContent .stepBredvcrumbs li a:hover {
   color: #009EFF;
+}
+
+main.mainContent .stepBredvcrumbs .backBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 110px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #009EFF;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+main.mainContent .stepBredvcrumbs .backBtn i {
+  margin-right: 5px;
 }
 
 main.mainContent .contentHeader {

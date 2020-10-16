@@ -89,6 +89,8 @@ main.mainContent
 		margin-bottom: 35px
 		list-style-type: none
 		text-align: center
+		padding-right: 115px
+		position: relative
 			
 		li
 			display: inline-block
@@ -106,6 +108,28 @@ main.mainContent
 
 				&:hover
 					color: $linkText
+
+		.backBtn
+			position: absolute
+			right: 0
+			bottom: 0
+			top: 0
+			width: 110px
+			font-size: 20px
+			font-weight: 700
+			text-decoration: none
+			text-transform: uppercase
+			background-color: $linkText
+			color: $whiteText
+
+			// layout styles
+			display: flex
+			align-items: center
+			justify-content: center
+			padding-bottom: 5px
+
+			i
+				margin-right: 5px
 
 	.contentHeader
 		display: flex
