@@ -194,7 +194,7 @@ main.mainContent .stepBredvcrumbs {
   margin-bottom: 35px;
   list-style-type: none;
   padding-right: 115px;
-  position: relative;
+  text-align: center;
 }
 
 main.mainContent .stepBredvcrumbs li {
@@ -220,32 +220,6 @@ main.mainContent .stepBredvcrumbs li a.active {
 
 main.mainContent .stepBredvcrumbs li a:hover {
   color: #009EFF;
-}
-
-main.mainContent .stepBredvcrumbs .backBtn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 110px;
-  font-size: 20px;
-  font-weight: 700;
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: #009EFF;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 5px;
-}
-
-main.mainContent .stepBredvcrumbs .backBtn:hover {
-  background-color: #006FFF;
-}
-
-main.mainContent .stepBredvcrumbs .backBtn i {
-  margin-right: 5px;
 }
 
 main.mainContent .contentHeader {
@@ -274,11 +248,33 @@ main.mainContent .contentHeader a i {
   margin-left: 5px;
 }
 
-main.mainContent .nextStepBtn {
-  border-radius: 0;
-  padding: 15px;
-  text-decoration: none;
+.btnContainer {
   margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btnContainer .backBtn,
+.btnContainer .nextStepBtn {
+  border-radius: 0;
+  border: 2px solid #009EFF;
+  padding: 15px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.btnContainer .backBtn.backBtn,
+.btnContainer .nextStepBtn.backBtn {
+  color: #009EFF;
+  background-color: #fff;
+  transition: .3s;
+}
+
+.btnContainer .backBtn.backBtn:hover,
+.btnContainer .nextStepBtn.backBtn:hover {
+  background-color: #009EFF;
+  color: #fff;
 }
 
 @media only screen and (max-width: 991px) {
@@ -298,12 +294,8 @@ main.mainContent .nextStepBtn {
     padding: 15px;
     text-align: center;
   }
-  main.mainContent .stepBredvcrumbs .backBtn {
-    position: static;
-    width: calc( 100% + 30px);
-    padding: 10px;
-    margin: -15px;
-    margin-top: 15px;
+  .btnContainer {
+    flex-direction: column;
   }
 }
 
@@ -1968,6 +1960,39 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   }
 }
 
+.clContentHeader {
+  list-style-type: none;
+  margin-bottom: 25px;
+  margin-top: 50px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+.clContentHeader li {
+  display: inline-block;
+  padding: 10px;
+  padding-top: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.clContentHeader li:hover a.clTabBtn {
+  color: #009EFF;
+}
+
+.clContentHeader li.active {
+  border-color: #009EFF;
+}
+
+.clContentHeader li.active a.clTabBtn {
+  color: #009EFF;
+}
+
+.clContentHeader li a.clTabBtn {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #5f6060;
+}
+
 .clItemContainer {
   text-align: center;
   margin-top: 35px;
@@ -2085,6 +2110,12 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 }
 
 @media only screen and (max-width: 767px) {
+  .clContentHeader {
+    text-align: center;
+  }
+  .clContentHeader li {
+    border-color: transparent !important;
+  }
   .clItemContainer {
     grid-template-columns: 1fr 1fr;
   }
@@ -2174,6 +2205,7 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   padding: 0px 10px;
   border-radius: 5px;
   color: #fff;
+  display: inline-block;
 }
 
 .scForm .form-group .backupsSpecial .backupsLeft .labelBox p {

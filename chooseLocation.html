@@ -289,11 +289,6 @@
 					Submit
 				</a>
 			</li>
-			<!-- back btn -->
-			<a class="backBtn" href="chooseOs.html">
-				<i class="fas fa-arrow-left"></i>
-				Back
-			</a>
 		</ul>
 		<!-- content header portion -->
 		<div class="contentHeader">
@@ -301,10 +296,34 @@
 				Choose your where want to get the machine.
 			</h2>
         </div>
-        
+		
+		<!-- choose location tab button -->
+		<ul class="clContentHeader">
+			<li class="active">
+				<a class="clTabBtn" areaTabClas="all">
+					All
+				</a>
+			</li>
+			<li class="">
+				<a class="clTabBtn" areaTabClas="asia">
+					Asia
+				</a>
+			</li>
+			<li class="">
+				<a class="clTabBtn" areaTabClas="america">
+					America
+				</a>
+			</li>
+			<li class="">
+				<a class="clTabBtn" areaTabClas="europe">
+					europe
+				</a>
+			</li>
+		</ul>
+
         <!-- choose location content -->
         <div class="clItemContainer">
-            <div class="clItem active">
+            <div class="clItem active asia">
                 <div class="clItemHeader">
                     <img src="src/file/image/bangladesh.png" alt="">
                     <p>
@@ -329,7 +348,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="clItem">
+            <div class="clItem america">
                 <div class="clItemHeader">
                     <img src="src/file/image/united-states.png" alt="">
                     <p>
@@ -354,7 +373,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="clItem">
+            <div class="clItem europe">
                 <div class="clItemHeader">
                     <img src="src/file/image/united-kingdom.png" alt="">
                     <p>
@@ -369,7 +388,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="clItem">
+            <div class="clItem asia">
                 <div class="clItemHeader">
                     <img src="src/file/image/japan.png" alt="">
                     <p>
@@ -394,7 +413,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="clItem">
+            <div class="clItem europe">
                 <div class="clItemHeader">
                     <img src="src/file/image/germany.png" alt="">
                     <p>
@@ -443,10 +462,17 @@
             </p>
         </div>
 
-		<!-- next step button -->
-		<a class="nextStepBtn button" href="setConfiguration.html">
-			Go to next step 
-		</a>
+		<div class="btnContainer">
+			<!-- back btn -->
+			<a class="backBtn button" href="chooseOs.html">
+				<i class="fas fa-arrow-left"></i>
+				Back
+			</a>
+			<!-- next step button -->
+			<a class="nextStepBtn button" href="setConfiguration.html">
+				Go to next step 
+			</a>
+		</div>
 	</main>
 
 	<!-- including jquery -->

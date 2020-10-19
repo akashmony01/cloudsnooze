@@ -47,10 +47,21 @@ $(document).ready(function(){
 		$('.distroItem').removeClass("active");
 		// add active to new
         $(this).addClass("active");
-        
+
+
+        var currentImg = $(this).find("img");
+        var imgSrc = $(currentImg).attr("src");
+        var imgUrl = imgSrc.split(/\.(?=[^\.]+$)/)[0];
+        var imgExt = imgSrc.split(/\.(?=[^\.]+$)/)[1];
+        var chngUrl = imgUrl + "-blue." + imgExt
+
+        $(currentImg).attr("src", chngUrl);
+
         // ssh alert show hide
         sshAlertShowHide();
     });
+
+
     
     // ssh alert show hide
     sshAlertShowHide();
@@ -118,3 +129,6 @@ $(document).ready(function() {
         $(".wrapperForImportUrlModal").removeClass("active");
     });
 });
+
+
+

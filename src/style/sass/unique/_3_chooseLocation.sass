@@ -1,3 +1,32 @@
+.clContentHeader
+    list-style-type: none
+    margin-bottom: 25px
+    margin-top: 50px
+    border-bottom: 2px solid $darkBorder
+    
+    li
+        display: inline-block
+        padding: 10px
+        padding-top: 0
+        border-bottom: 2px solid transparent
+        margin-bottom: -2px
+
+        &:hover
+            a.clTabBtn
+                color: $linkText
+
+        &.active
+            border-color: $linkText
+
+            a.clTabBtn
+                color: $linkText
+
+        a.clTabBtn
+            text-transform: uppercase
+            font-weight: 600
+            color: $lightText
+
+// main content 
 .clItemContainer
     text-align: center
     margin-top: 35px
@@ -101,6 +130,12 @@
 
 // responsive styles
 @media only screen and (max-width: 767px)
+    .clContentHeader
+        text-align: center
+
+        li
+            border-color: transparent!important
+    
     .clItemContainer
         grid-template-columns: 1fr 1fr
 

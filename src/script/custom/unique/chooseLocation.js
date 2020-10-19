@@ -22,3 +22,22 @@ $(document).ready(function() {
         }
     });
 });
+
+
+// -----------------------------------------------
+// countrty area tab script
+$(document).ready(function(){
+	$(".clTabBtn").click(function(){
+		var clTab = $(this).attr('areaTabClas');
+		
+		$(".clTabBtn").parent().removeClass("active");
+		$(this).parent().addClass("active");
+        
+        if (clTab == "all") {
+            $(".clItem").show();
+        }else{
+            $(".clItem").hide();
+            $("."+clTab).show();
+        }
+	});
+});

@@ -45,9 +45,8 @@ $(document).ready(function(){
 // -----------------------------------------------
 // configuration type
 $(document).ready(function(){
-
     // check confirm password function
-	function chkConfPass() {
+	function chkConfPass(e) {
         // main pass value
         var adminPass = $( "#adminUserPass" ).val();
         // confirm pass value
@@ -65,17 +64,14 @@ $(document).ready(function(){
         if (adminPass != confPass) {
             $(inputLabel).children(".failAlert").remove();
             $(inputLabel).append(failMsg);
+
+            e.preventDefault();
         }else{
             $(inputLabel).children(".failAlert").remove();
         }
 	}
 
-    // call check confirm pass function
-    $( "#confirmPass" ).focusout(function() {
-        chkConfPass();
-    });
-
-    // check form validation function
+    // form alidation function
     function formValidation() {
         $('form.scForm').find('input, textarea, select').each(function(){
             if($(this).prop('required')){
@@ -134,13 +130,6 @@ $(document).ready(function(){
         });
     }
 
-    // call validation function
-    $("#submitForm").click(function(){
-        formValidation();
-        chkConfPass();
-    });
-
-
     // hide fail msg by self focus out
     $( "input, textarea, select" ).focusout(function() {
         // getting the current parent
@@ -154,5 +143,16 @@ $(document).ready(function(){
             // reseting label if already has alert
             $( alertContainer ).remove();
         }
+    });
+
+    // call conifrm password function 
+    $( "#confirmPass" ).focusout(function(e) {
+        chkConfPass(e);
+    });
+
+    // call validation function
+    $("#submitForm").click(function(e){
+        formValidation();
+        chkConfPass(e);
     });
 });
