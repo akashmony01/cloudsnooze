@@ -2114,14 +2114,25 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 }
 
 .scForm .form-group label.spiltLabel {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  position: relative;
+  display: block;
+  padding-right: 110px;
 }
 
 .scForm .form-group label.spiltLabel a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 110px;
+  text-align: right;
   font-size: 16px;
   color: #009EFF;
+}
+
+.scForm .form-group label span.failAlert {
+  color: #ED4F32;
+  font-weight: 400;
 }
 
 .scForm .form-group input {

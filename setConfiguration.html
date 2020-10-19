@@ -303,21 +303,21 @@
         </div>
         
         <!-- configuration from -->
-        <form class="scForm">
+        <form class="scForm" action="previewAndSubmit.html">
             <div class="form-group">
-                <label for="adminUserName">
+                <label class="formLabel" for="adminUserName">
                     Admin User Name
                 </label>
-                <input id="adminUserName" class="form-control" type="text">
+                <input id="adminUserName" class="form-control" type="text" required>
 			</div>
 			<!-- configuration option -->
 			<div class="form-group configOption">
-				<label>
-                    Configuration Options
+				<label class="formLabel">
+					Configuration Options
 				</label>
 				<div class="configItemContainer">
 					<label id="passConfigItem" class="form-control configItem" for="configByPass">
-						<input class="configInput" id="configByPass" type="radio" name="configOption">
+						<input class="configInput" id="configByPass" type="radio" name="configOption" value="1" required>
 
 						<div class="configOptionText">
 							<h5>
@@ -330,7 +330,7 @@
 						</div>
 					</label>
 					<label id="sshConfigItem" class="form-control configItem" for="configBySsh">
-						<input class="configInput" id="configBySsh" type="radio" name="configOption">
+						<input class="configInput" id="configBySsh" type="radio" name="configOption" value="2" required>
 
 						<div class="configOptionText">
 							<h5>
@@ -346,20 +346,20 @@
 			</div>
 			<!-- configured by password -->
             <div class="form-group passConfiguration">
-                <label for="adminUserPass">
+                <label class="formLabel" for="adminUserPass">
                     Admin User Password
                 </label>
                 <input id="adminUserPass" class="form-control" type="password">
             </div>
             <div class="form-group passConfiguration">
-                <label for="confirmPass">
-                    Confirm Password
+                <label class="formLabel" for="confirmPass">
+					Confirm Password
                 </label>
                 <input id="confirmPass" class="form-control" type="password">
 			</div>
 			<!-- configured by ssh key -->
             <div class="form-group sshConfiguration">
-                <label for="sshKey" class="spiltLabel">
+                <label class="formLabel spiltLabel" for="sshKey">
                     SSH key
                     <a href="">
                         New SSH key
@@ -368,26 +368,29 @@
                 <textarea id="sshKey" class="form-control"></textarea>
             </div>
             <div class="form-group">
-                <label for="tags">
+                <label class="formLabel" for="tags">
                     Tags
                 </label>
                 <input id="confirmPtagsass" class="form-control" type="text">
             </div>
             <div class="form-group">
-                <label for="project">
+                <label class="formLabel" for="project">
                     Select A Project
                 </label>
                 <select class="form-control" id="project">
-                    <option value="">
+					<option value="">
+						-- Select a project --
+					</option>
+                    <option value="1">
                         Project One
                     </option>
-                    <option value="">
+                    <option value="2">
                         Project Two
                     </option>
                 </select>
             </div>
             <div class="form-group">
-                <label>
+                <label class="formLabel">
                     Add Backups
                 </label>
                 <div class="form-control backupsSpecial">
@@ -418,13 +421,13 @@
 						</p>
 					</div>
                 </div>
-            </div>
+			</div>
+			
+			<!-- next step button -->
+			<button id="submitForm" type="submit" class="nextStepBtn button w-100">
+				Go to next step 
+			</button>
         </form>
-
-		<!-- next step button -->
-		<a class="nextStepBtn button" href="previewAndsubmit.html">
-			Go to next step 
-		</a>
 	</main>
 
 	<!-- including jquery -->
@@ -439,6 +442,6 @@
 	<!-- custom js -->
 	<script src="src/script/custom/reusbale/sideBar.js"></script>
 	<script src="src/script/custom/main.js"></script>
-	<script src="src/script/custom/unique/previewAndSubmit.js"></script>
+	<script src="src/script/custom/unique/setConfiguration.js"></script>
 </body>
 </!doctype>
