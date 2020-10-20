@@ -47,6 +47,7 @@ $(document).ready(function(){
 		$('.distroItem').removeClass("active");
 		// add active to new
         $(this).addClass("active");
+        
         // ssh alert show hide
         sshAlertShowHide();
     });
