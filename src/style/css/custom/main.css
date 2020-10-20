@@ -1318,6 +1318,14 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   cursor: pointer;
 }
 
+.cosTabContent .cosTabItem.active#distroTab .distroItem:hover .distroBody .distroImg, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem:hover .distroBody .distroImg {
+  background-image: none;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem:hover .distroBody .distroImg img, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem:hover .distroBody .distroImg img {
+  opacity: 1;
+}
+
 .cosTabContent .cosTabItem.active#distroTab .distroItem.active, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem.active {
   border-color: #009EFF;
   color: #009EFF;
@@ -1325,6 +1333,14 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 
 .cosTabContent .cosTabItem.active#distroTab .distroItem.active .distroBody, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem.active .distroBody {
   border-color: #009EFF;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem.active .distroBody .distroImg, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem.active .distroBody .distroImg {
+  background-image: none;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem.active .distroBody .distroImg img, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem.active .distroBody .distroImg img {
+  opacity: 1;
 }
 
 .cosTabContent .cosTabItem.active#distroTab .distroItem.active p, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem.active p {
@@ -1336,9 +1352,24 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-.cosTabContent .cosTabItem.active#distroTab .distroItem .distroBody img, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroBody img {
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroBody .distroImg, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroBody .distroImg {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  background-position: center center;
+  background-size: 100% auto;
+  transition: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cosTabContent .cosTabItem.active#distroTab .distroItem .distroBody .distroImg img, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroBody .distroImg img {
   width: 50px;
   height: auto;
+  opacity: 0;
+  transition: .3s;
 }
 
 .cosTabContent .cosTabItem.active#distroTab .distroItem .distroBody p, .cosTabContent .cosTabItem.active#containerDistroTab .distroItem .distroBody p {
@@ -1465,8 +1496,24 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   background-color: #f5f5f5;
 }
 
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem:hover .applicationImg, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem:hover .applicationImg {
+  background-image: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem:hover .applicationImg img, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem:hover .applicationImg img {
+  opacity: 1;
+}
+
 .cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem.active, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem.active {
   border-color: #009EFF !important;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem.active .applicationImg, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem.active .applicationImg {
+  background-image: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem.active .applicationImg img, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem.active .applicationImg img {
+  opacity: 1;
 }
 
 .cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem:last-child, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem:last-child {
@@ -1482,10 +1529,20 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   z-index: 1;
 }
 
-.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem img, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem img {
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicationImg, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicationImg {
   margin-top: 2.5px;
   width: 30px;
-  height: 30px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  transition: .3s;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicationImg img, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicationImg img {
+  width: 30px;
+  height: auto;
+  opacity: 0;
+  transition: .3s;
 }
 
 .cosTabContent .cosTabItem.active#marketPlaceTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicatIonfo, .cosTabContent .cosTabItem.active#snapshotsTab .exploreMarketPLace .searchMarketPLace .searchItemContainer .applicationItem .applicatIonfo {
@@ -1598,6 +1655,46 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   background-color: #f5f5f5;
 }
 
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem:hover .applicationImg, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem:hover .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem:hover .applicationImg {
+  background-image: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem:hover .applicationImg img, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem:hover .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem:hover .applicationImg img {
+  opacity: 1;
+}
+
 .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem.active,
 .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem.active,
 .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem.active,
@@ -1616,6 +1713,46 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
 .cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem.active,
 .cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem.active {
   border-color: #009EFF !important;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem.active .applicationImg, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem.active .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem.active .applicationImg {
+  background-image: none;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem.active .applicationImg img, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem.active .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem.active .applicationImg img {
+  opacity: 1;
 }
 
 .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem:last-child,
@@ -1663,26 +1800,52 @@ aside.sideBar nav.sideBarContainer ul.sideMenu li.sideMenuItem ul.seconderyMenu 
   z-index: 1;
 }
 
-.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem img, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem img,
-.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem img {
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicationImg, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem .applicationImg,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicationImg {
   margin-top: 2.5px;
   width: 30px;
-  height: 30px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  transition: .3s;
+}
+
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .choosenAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .recommendedAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .choosenAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .choosenApplication .snapshotsAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .choosenAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#marketPlaceTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicationImg img, .cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .recommendedAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .choosenAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .recommendedApplication .snapshotsAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .recommendedAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .choosenAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .choosenApplication .snapshotsAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .recommendedAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .choosenAppContainer .applicationItem .applicationImg img,
+.cosTabContent .cosTabItem.active#snapshotsTab .snapshotsApplication .snapshotsAppContainer .applicationItem .applicationImg img {
+  width: 30px;
+  height: auto;
+  opacity: 0;
+  transition: .3s;
 }
 
 .cosTabContent .cosTabItem.active#marketPlaceTab .recommendedApplication .recommendedAppContainer .applicationItem .applicatIonfo,

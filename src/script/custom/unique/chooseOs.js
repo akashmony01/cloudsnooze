@@ -41,14 +41,8 @@ $(document).ready(function(){
 			$(".sshAlert").hide();
 		}
     }
-    
-	$(".distroItem").click(function(){
-        // remove active from siblings
-		$('.distroItem').removeClass("active");
-		// add active to new
-        $(this).addClass("active");
 
-
+    function osImgCHange() {
         var currentImg = $(this).find("img");
         var imgSrc = $(currentImg).attr("src");
         var imgUrl = imgSrc.split(/\.(?=[^\.]+$)/)[0];
@@ -56,7 +50,13 @@ $(document).ready(function(){
         var chngUrl = imgUrl + "-blue." + imgExt
 
         $(currentImg).attr("src", chngUrl);
-
+    }
+    
+	$(".distroItem").click(function(){
+        // remove active from siblings
+		$('.distroItem').removeClass("active");
+		// add active to new
+        $(this).addClass("active");
         // ssh alert show hide
         sshAlertShowHide();
     });
